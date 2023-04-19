@@ -39,7 +39,6 @@ require('lazy').setup({
     --lsp
     { 'neovim/nvim-lsp' },
     { 'ray-x/lsp_signature.nvim' },
-    { 'williamboman/mason.nvim',                   config = function() require('mason').setup() end },
     { 'windwp/nvim-autopairs' },
     { 'tpope/vim-surround' },
     { 'numToStr/Comment.nvim' },
