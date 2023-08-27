@@ -89,3 +89,4 @@ require('tmux').setup {
     },
 }
 
+require("mason").setup()

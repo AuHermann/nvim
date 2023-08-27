@@ -16,11 +16,11 @@ vim.g.mapleader = ' '
 
 require('lazy').setup({
     { 'nvim-lua/popup.nvim' },
-    { 'nvim-lua/plenary.nvim' },
     { 'david-kunz/treesitter-unit' },
     { 'nvim-treesitter/nvim-treesitter' },
     { 'nvim-telescope/telescope-fzf-native.nvim',  run = 'make' },
-    { 'nvim-telescope/telescope.nvim' },
+    { 'nvim-telescope/telescope.nvim',
+        dependencies = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' }},
     { 'nvim-telescope/telescope-file-browser.nvim' },
     { 'debugloop/telescope-undo.nvim' },
 
@@ -28,7 +28,11 @@ require('lazy').setup({
     { 'dcampos/nvim-snippy' },
     { 'dcampos/cmp-snippy' },
     { 'honza/vim-snippets' },
-    { 'L3MON4D3/LuaSnip',                          version = "<CurrentMajor>.*" },
+    { "L3MON4D3/LuaSnip", -- follow latest release.
+	    version = "2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+	-- install jsregexp (optional!).
+	    build = "make install_jsregexp"
+    },
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/cmp-path' },
@@ -46,8 +50,6 @@ require('lazy').setup({
     { 'aserowy/tmux.nvim' },
     { 'theprimeagen/harpoon' },
     { "williamboman/mason.nvim" },
-
-    { 'kyazdani42/nvim-web-devicons' },
     { 'nvim-lualine/lualine.nvim' },
     { 'Mofiqul/dracula.nvim' },
 
@@ -57,7 +59,6 @@ require('lazy').setup({
     { 'theprimeagen/git-worktree.nvim' },
     { 'timuntersberger/neogit' },
     { 'sindrets/diffview.nvim' },
-
 
     { 'lervag/vimtex' },
 })
